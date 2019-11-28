@@ -53,7 +53,7 @@
 				<configuration>
 					<images>
 						<image>
-							<name>jonasped/test</name>
+							<name>jonasped/jonasdemo</name>
 							<build>
 								<tags>
 									<tag>latest</tag>
