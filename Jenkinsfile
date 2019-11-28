@@ -14,10 +14,10 @@ node {
 		}
 	}
 
-    stage('Tag Docker image and push to registry') {
-        docker.withRegistry('https://kitdocker.kvalitetsit.dk/') {
-            def image = docker.image("jonasped/test:latest")
+	stage('Tag Docker image and push to registry') {
+		docker.withRegistry('https://kitdocker.kvalitetsit.dk/') {
+            image = docker.image("kvalitetsit/jonasdemo:latest")
             image.push("dev")
-        }
-    }
+		}
+	}
 }
