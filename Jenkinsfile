@@ -16,7 +16,7 @@ node {
 
     stage('Tag Docker image and push to registry') {
         docker {
-            image = docker.image("kvalitetsit/jonasdemo:${scmInfo.GIT_COMMIT}")
+            def image = docker.image("jonasped/test:latest")
             image.push("dev")
         }
     }
