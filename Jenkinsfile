@@ -14,9 +14,6 @@ node {
 		}
 	}
 
-    stage('') {
-    }
-
 	stage('Tag Docker image and push to registry') {
 		def image = docker.image('jonasped/test:latest')
 		image.push("dev")
