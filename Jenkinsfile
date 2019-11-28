@@ -14,10 +14,12 @@ node {
 		}
 	}
 
+    stage('') {
+    }
+
 	stage('Tag Docker image and push to registry') {
-		docker {
-            image = docker.image("jonasdemo/test:latest")
-            image.push("dev")
-		}
+		def image = docker.image('jonasped/test:latest')
+		image.push("dev")
+
 	}
 }
