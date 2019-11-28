@@ -15,8 +15,8 @@ node {
 	}
 
 	stage('Tag Docker image and push to registry') {
-		docker.withRegistry('https://kitdocker.kvalitetsit.dk/') {
-            image = docker.image("kvalitetsit/jonasdemo:latest")
+		docker {
+            image = docker.image("jonasdemo/test:latest")
             image.push("dev")
 		}
 	}
