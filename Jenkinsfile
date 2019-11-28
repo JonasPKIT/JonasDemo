@@ -13,12 +13,4 @@ node {
 			sh 'mvn install'
 		}
 	}
-
-// 	stage('Tag Docker image and push to registry') {
-// 		docker.withRegistry('https://kitdocker.kvalitetsit.dk/') {
-//             image = docker.image("kvalitetsit/medcom-url-handler-web:${scmInfo.GIT_COMMIT}")
-//             image.push("${scmInfo.GIT_COMMIT}")
-//             image.push("dev")
-// 		}
-// 	}
 }
