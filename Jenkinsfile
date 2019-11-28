@@ -13,4 +13,11 @@ node {
 			sh 'mvn install'
 		}
 	}
+
+    stage('Tag Docker image and push to registry') {
+        docker {
+            image = docker.image("kvalitetsit/jonasdemo:${scmInfo.GIT_COMMIT}")
+            image.push("dev")
+        }
+    }
 }
