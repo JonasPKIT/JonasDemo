@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RestController {
     @RequestMapping("/")
     public String home() {
-        return "Hello Docker World";
+        return "Hello from an updated Docker World";
     }
 }
