@@ -20,11 +20,11 @@ node {
 	}
 
 	stage('Tag docker image') {
-	    echo scmInfo.TAG_NAME
-	    if (scmInfo.TAG_NAME != null && scmInfo.TAG_NAME.beginsWith("v"))
+	    echo env.TAG_NAME
+	    if (env.TAG_NAME != null && env.TAG_NAME.beginsWith("v"))
 	    {
             echo "Tagging"
-            image.push(tag.substring(1))
+            image.push(env.TAG_NAME.substring(1))
             image.push('latest')
 	    }
 	}
