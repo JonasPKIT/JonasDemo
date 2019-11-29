@@ -24,6 +24,8 @@ node {
 	    if (env.TAG_NAME != null && env.TAG_NAME.startsWith("v"))
 	    {
             echo "Tagging"
+            def image = docker.image('jonasped/jonasdemo:latest')
+            image.push("dev")
             image.push(env.TAG_NAME.substring(1))
             image.push('latest')
 	    }
