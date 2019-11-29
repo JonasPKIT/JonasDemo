@@ -14,11 +14,6 @@ node {
 		}
 	}
 
-    stage('Tag version') {
-        def INPUT_PARAMS = input message: 'Please Provide Parameters'
-    }
-
-
 	stage('Tag Docker image and push to registry') {
 		def image = docker.image('jonasped/jonasdemo:latest')
 		image.push("dev")
