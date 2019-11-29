@@ -18,9 +18,12 @@ node {
 		def image = docker.image('jonasped/jonasdemo:latest')
 		image.push("dev")
 
-   		when (tag "v*" )
+   		when {tag "v*" }
+            steps {
+            echo "deploy"
             image.push(tag.substring(1))
             image.push('latest')
+            }
         }
 	}
 }
