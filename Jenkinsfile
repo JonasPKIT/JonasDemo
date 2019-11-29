@@ -17,5 +17,10 @@ node {
 	stage('Tag Docker image and push to registry') {
 		def image = docker.image('jonasped/jonasdemo:latest')
 		image.push("dev")
+
+		when { tag "v*" }
+            image.push(tag.substring(1))
+            image.push('latest')
+        }
 	}
 }
