@@ -21,7 +21,7 @@ node {
 
 	stage('Tag docker image') {
 	    echo env.TAG_NAME
-	    if (env.TAG_NAME != null && env.TAG_NAME.beginsWith("v"))
+	    if (env.TAG_NAME != null && env.TAG_NAME.startsWith("v"))
 	    {
             echo "Tagging"
             image.push(env.TAG_NAME.substring(1))
