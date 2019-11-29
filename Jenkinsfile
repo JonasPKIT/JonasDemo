@@ -20,11 +20,10 @@ node {
 	}
 
 	stage('Tag docker image') {
-	    when {
-	        tag 'v*'
-	    }
-	    steps {
-            echo "deploy"
+	    echo scmInfo.TAG_NAME
+	    if (schInfo.TAG_NAME != null && scmInfo.TAG_NAME.beginsWith("v"))
+	    {
+            echo "Tagging"
             image.push(tag.substring(1))
             image.push('latest')
 	    }
