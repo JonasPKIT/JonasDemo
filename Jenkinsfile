@@ -14,13 +14,12 @@ node {
 		}
 	}
 
-	stage('Tag Docker image and push to registry') {
-		def image = docker.image('jonasped/jonasdemo:latest')
-		image.push("dev")
+	stage('Push dev image to registry') {
+		def image = docker.image('kvalitetsit/jonasdemo:latest')
+		image.push("jonasped/jonasdemo:dev")
 	}
 
-	stage('Tag docker image') {
-	    echo env.TAG_NAME
+	stage('Push version tag to registry') {
 	    if (env.TAG_NAME != null && env.TAG_NAME.startsWith("v"))
 	    {
             echo "Tagging"
