@@ -1,6 +1,2 @@
-# DEMO
-This is a demo service.
-
-more text
-
-some more updates.
+# Demo project
+This is a demo project. 

@@ -16,7 +16,7 @@ node {
 
 	stage('Push dev image to registry') {
 		def image = docker.image('kvalitetsit/jonasdemo:latest')
-		image.tag("jonasped/jonasdemo")
+		image.tag("kvali")
 		image.push("dev")
 	}
 
